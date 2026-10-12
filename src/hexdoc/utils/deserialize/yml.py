@@ -40,7 +40,7 @@ def _flatten_inner(obj: dict[str, Any], prefix: str) -> dict[str, str]:
             case str():
                 _update_disallow_duplicates(out, {key: value})
             case _:
-                raise TypeError(value)
+                raise TypeError(f"key: '{key}' had type error for value: {value}")
 
     return out
 
